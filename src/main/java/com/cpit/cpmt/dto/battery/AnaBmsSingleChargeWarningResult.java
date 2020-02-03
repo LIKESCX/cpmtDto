@@ -11,7 +11,11 @@ public class AnaBmsSingleChargeWarningResult implements Serializable {
 	/**
      * BMS编码
      */
-    private String bmsCode;
+    private String bMSCode;
+    /**
+     * BMS版本
+     */
+    private String bMSVer;
 
     /**
      * 运营商唯一id
@@ -26,12 +30,12 @@ public class AnaBmsSingleChargeWarningResult implements Serializable {
     /**
      * 开始时间
      */
-    private Date starttime;
+    private Date startTime;
 
     /**
      * 结束时间
      */
-    private Date endtime;
+    private Date endTime;
 	/**
      * 充电站id
      */
@@ -42,10 +46,6 @@ public class AnaBmsSingleChargeWarningResult implements Serializable {
      */
     private String equipmentId;
 
-    /**
-     * BMS版本
-     */
-    private String bmsVer;
 
     /**
      * 预警代码
@@ -98,15 +98,39 @@ public class AnaBmsSingleChargeWarningResult implements Serializable {
         this.equipmentId = equipmentId;
     }
 
-    public String getBmsVer() {
-        return bmsVer;
-    }
+    public String getbMSCode() {
+		return bMSCode;
+	}
 
-    public void setBmsVer(String bmsVer) {
-        this.bmsVer = bmsVer;
-    }
+	public void setbMSCode(String bMSCode) {
+		this.bMSCode = bMSCode;
+	}
 
-    public Integer getWarningCode() {
+	public String getbMSVer() {
+		return bMSVer;
+	}
+
+	public void setbMSVer(String bMSVer) {
+		this.bMSVer = bMSVer;
+	}
+
+	public Date getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(Date startTime) {
+		this.startTime = startTime;
+	}
+
+	public Date getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(Date endTime) {
+		this.endTime = endTime;
+	}
+
+	public Integer getWarningCode() {
         return warningCode;
     }
 
@@ -162,13 +186,6 @@ public class AnaBmsSingleChargeWarningResult implements Serializable {
         this.statisticalSeason = statisticalSeason;
     }
     
-	public String getBmsCode() {
-		return bmsCode;
-	}
-
-	public void setBmsCode(String bmsCode) {
-		this.bmsCode = bmsCode;
-	}
 
 	public String getOperatorId() {
 		return operatorId;
@@ -186,30 +203,13 @@ public class AnaBmsSingleChargeWarningResult implements Serializable {
 		this.connectorId = connectorId;
 	}
 
-	public Date getStarttime() {
-		return starttime;
-	}
-
-	public void setStarttime(Date starttime) {
-		this.starttime = starttime;
-	}
-
-	public Date getEndtime() {
-		return endtime;
-	}
-
-	public void setEndtime(Date endtime) {
-		this.endtime = endtime;
-	}
-
 	@Override
 	public String toString() {
-		return "AnaBmsSingleChargeWarningResult [bmsCode=" + bmsCode + ", operatorId=" + operatorId + ", connectorId="
-				+ connectorId + ", starttime=" + starttime + ", endtime=" + endtime + ", stationId=" + stationId
-				+ ", equipmentId=" + equipmentId + ", bmsVer=" + bmsVer + ", warningCode=" + warningCode
+		return "AnaBmsSingleChargeWarningResult [bMSCode=" + bMSCode + ", bMSVer=" + bMSVer + ", operatorId="
+				+ operatorId + ", connectorId=" + connectorId + ", startTime=" + startTime + ", endTime=" + endTime
+				+ ", stationId=" + stationId + ", equipmentId=" + equipmentId + ", warningCode=" + warningCode
 				+ ", warningDesc=" + warningDesc + ", warningLevel=" + warningLevel + ", statisticalDate="
 				+ statisticalDate + ", statisticalWeek=" + statisticalWeek + ", statisticalMonth=" + statisticalMonth
 				+ ", statisticalSeason=" + statisticalSeason + "]";
 	}
-    
 }
