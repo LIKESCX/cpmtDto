@@ -123,7 +123,7 @@ public class BmsInfo extends EquimentMonitorCondition implements Serializable {
      */
     @JsonFormat(pattern=TimeConvertor.FORMAT_MINUS_24HOUR,timezone = "GMT+8")
     private Date startChargingTime;
-    
+       
     /**
      * 充电时长 单位:秒 整型
      */
@@ -353,6 +353,7 @@ public class BmsInfo extends EquimentMonitorCondition implements Serializable {
 
 	public void setStartChargingTime(Date startChargingTime) {
 		this.startChargingTime = startChargingTime;
+		this.startTime = startChargingTime;
 	}
 
 	public Integer getChargingSessionMin() {
@@ -372,6 +373,9 @@ public class BmsInfo extends EquimentMonitorCondition implements Serializable {
 	}
 
 	public Date getEndTime() {
+		if(endTime==null) {
+			endTime = new Date(this.startChargingTime.getTime()+this.chargingSessionMin);
+		}
 		return endTime;
 	}
 
@@ -387,8 +391,9 @@ public class BmsInfo extends EquimentMonitorCondition implements Serializable {
 				+ ", maxTemp=" + maxTemp + ", ratedCapacity=" + ratedCapacity + ", tatalVoltage=" + tatalVoltage
 				+ ", totalCurrent=" + totalCurrent + ", soc=" + soc + ", voltageH=" + voltageH + ", voltageL="
 				+ voltageL + ", temptureH=" + temptureH + ", temptureL=" + temptureL + ", sourceType=" + sourceType
-				+ ", alarmInfoId=" + alarmInfoId + ", connectorProcDataId=" + connectorProcDataId + ", receivedTime="
-				+ receivedTime + ", inTime=" + inTime + "]";
+				+ ", alarmInfoId=" + alarmInfoId + ", connectorProcDataId=" + connectorProcDataId
+				+ ", startChargingTime=" + startChargingTime + ", chargingSessionMin=" + chargingSessionMin
+				+ ", startTime=" + startTime + ", endTime=" + endTime + ", receivedTime=" + receivedTime + ", inTime="
+				+ inTime + "]";
 	}
-	
 }

@@ -106,6 +106,12 @@ public class AnaBmsSingleCharge implements Serializable {
      * 充电后soc值
      */
     private Integer afterSoc;
+    
+    /**
+     * 统计次数 汇总是用
+     */
+    
+    private String statisticalTimes;
 
     /**
      * 对应的日期(以结束时间为准)
@@ -415,6 +421,16 @@ public class AnaBmsSingleCharge implements Serializable {
 
 
 
+	public String getStatisticalTimes() {
+		return statisticalTimes;
+	}
+
+
+
+	public void setStatisticalTimes(String statisticalTimes) {
+		this.statisticalTimes = statisticalTimes;
+	}
+
 	@Override
 	public String toString() {
 		return "AnaBmsSingleCharge [bMSCode=" + bMSCode + ", operatorId=" + operatorId + ", connectorId=" + connectorId
@@ -422,9 +438,9 @@ public class AnaBmsSingleCharge implements Serializable {
 				+ equipmentId + ", bMSVer=" + bMSVer + ", estiR=" + estiR + ", remainCapacity=" + remainCapacity
 				+ ", chargeTime=" + chargeTime + ", sOH=" + sOH + ", remark1=" + remark1 + ", soc=" + soc
 				+ ", voltageH=" + voltageH + ", voltageL=" + voltageL + ", temptureH=" + temptureH + ", temptureL="
-				+ temptureL + ", beforeSoc=" + beforeSoc + ", afterSoc=" + afterSoc + ", statisticalDate="
-				+ statisticalDate + ", statisticalWeek=" + statisticalWeek + ", statisticalMonth=" + statisticalMonth
-				+ ", statisticalSeason=" + statisticalSeason + "]";
+				+ temptureL + ", beforeSoc=" + beforeSoc + ", afterSoc=" + afterSoc + ", statisticalTimes="
+				+ statisticalTimes + ", statisticalDate=" + statisticalDate + ", statisticalWeek=" + statisticalWeek
+				+ ", statisticalMonth=" + statisticalMonth + ", statisticalSeason=" + statisticalSeason + "]";
 	}
 	
 }
