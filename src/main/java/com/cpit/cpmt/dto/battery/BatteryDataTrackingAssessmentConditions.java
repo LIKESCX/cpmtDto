@@ -16,6 +16,11 @@ public class BatteryDataTrackingAssessmentConditions implements Serializable {
 	 * 运营商Id
 	 */
 	private String operatorId;
+	
+	/**
+	 * 设备接口Id
+	 */
+	private String connectorId;
 
 	/**
 	 * 运营商列表
@@ -38,6 +43,7 @@ public class BatteryDataTrackingAssessmentConditions implements Serializable {
      * 设备编码Id
      */
     private String equipmentId;
+
 	/**
 	 * 充电桩是否全选标识符  0 为单选 1为全选
 	 */
@@ -62,6 +68,27 @@ public class BatteryDataTrackingAssessmentConditions implements Serializable {
      */
     @JsonFormat(pattern=TimeConvertor.FORMAT_MINUS_24HOUR,timezone = "GMT+8")
     private Date endTime;
+    
+    private String startStatisticalHour;
+    
+    private String endStatisticalHour;
+    
+    private String startStatisticalDay;
+    
+    private String endStatisticalDay;
+    
+    private String startStatisticalWeek;
+    
+    private String endStatisticalWeek;
+    
+    private String startStatisticalMonth;
+    
+    private String endStatisticalMonth;
+    
+    private String startStatisticalSeason;
+    
+    private String endStatisticalSeason;
+    
     
 	public String getOperatorId() {
 		return operatorId;
@@ -99,6 +126,12 @@ public class BatteryDataTrackingAssessmentConditions implements Serializable {
 	public void setEquipmentId(String equipmentId) {
 		this.equipmentId = equipmentId;
 	}
+	public String getConnectorId() {
+		return connectorId;
+	}
+	public void setConnectorId(String connectorId) {
+		this.connectorId = connectorId;
+	}
 	public Integer getAllEquipments() {
 		return allEquipments;
 	}
@@ -128,6 +161,66 @@ public class BatteryDataTrackingAssessmentConditions implements Serializable {
 	}
 	public void setEndTime(Date endTime) {
 		this.endTime = endTime;
+	}
+	public String getStartStatisticalHour() {
+		return startStatisticalHour;
+	}
+	public void setStartStatisticalHour(String startStatisticalHour) {
+		this.startStatisticalHour = startStatisticalHour;
+	}
+	public String getEndStatisticalHour() {
+		return endStatisticalHour;
+	}
+	public void setEndStatisticalHour(String endStatisticalHour) {
+		this.endStatisticalHour = endStatisticalHour;
+	}
+	public String getStartStatisticalDay() {
+		return startStatisticalDay;
+	}
+	public void setStartStatisticalDay(String startStatisticalDay) {
+		this.startStatisticalDay = startStatisticalDay;
+	}
+	public String getEndStatisticalDay() {
+		return endStatisticalDay;
+	}
+	public void setEndStatisticalDay(String endStatisticalDay) {
+		this.endStatisticalDay = endStatisticalDay;
+	}
+	public String getStartStatisticalWeek() {
+		return startStatisticalWeek;
+	}
+	public void setStartStatisticalWeek(String startStatisticalWeek) {
+		this.startStatisticalWeek = startStatisticalWeek;
+	}
+	public String getEndStatisticalWeek() {
+		return endStatisticalWeek;
+	}
+	public void setEndStatisticalWeek(String endStatisticalWeek) {
+		this.endStatisticalWeek = endStatisticalWeek;
+	}
+	public String getStartStatisticalMonth() {
+		return startStatisticalMonth;
+	}
+	public void setStartStatisticalMonth(String startStatisticalMonth) {
+		this.startStatisticalMonth = startStatisticalMonth;
+	}
+	public String getEndStatisticalMonth() {
+		return endStatisticalMonth;
+	}
+	public void setEndStatisticalMonth(String endStatisticalMonth) {
+		this.endStatisticalMonth = endStatisticalMonth;
+	}
+	public String getStartStatisticalSeason() {
+		return startStatisticalSeason;
+	}
+	public void setStartStatisticalSeason(String startStatisticalSeason) {
+		this.startStatisticalSeason = startStatisticalSeason;
+	}
+	public String getEndStatisticalSeason() {
+		return endStatisticalSeason;
+	}
+	public void setEndStatisticalSeason(String endStatisticalSeason) {
+		this.endStatisticalSeason = endStatisticalSeason;
 	}
 	@Override
 	public String toString() {

@@ -3,6 +3,9 @@ package com.cpit.cpmt.dto.battery;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.cpit.common.TimeConvertor;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 /**
  * @author 
  */
@@ -26,11 +29,13 @@ public class AnaBmsSingleCharge implements Serializable {
     /**
      * 开始时间
      */
+    @JsonFormat(pattern=TimeConvertor.FORMAT_MINUS_24HOUR,timezone = "GMT+8")
     private Date startTime;
 
     /**
      * 结束时间
      */
+    @JsonFormat(pattern=TimeConvertor.FORMAT_MINUS_24HOUR,timezone = "GMT+8")
     private Date endTime;
     /**
      * 充电站id
@@ -108,10 +113,14 @@ public class AnaBmsSingleCharge implements Serializable {
     private Integer afterSoc;
     
     /**
-     * 统计次数 汇总是用
+     * 统计次数  按小时汇总时用
      */
     
     private String statisticalTimes;
+    /**
+     * 统计次数  按小时汇总时用
+     */
+    private String statisticalHour;
 
     /**
      * 对应的日期(以结束时间为准)
@@ -431,6 +440,14 @@ public class AnaBmsSingleCharge implements Serializable {
 		this.statisticalTimes = statisticalTimes;
 	}
 
+	public String getStatisticalHour() {
+		return statisticalHour;
+	}
+
+	public void setStatisticalHour(String statisticalHour) {
+		this.statisticalHour = statisticalHour;
+	}
+
 	@Override
 	public String toString() {
 		return "AnaBmsSingleCharge [bMSCode=" + bMSCode + ", operatorId=" + operatorId + ", connectorId=" + connectorId
@@ -439,8 +456,9 @@ public class AnaBmsSingleCharge implements Serializable {
 				+ ", chargeTime=" + chargeTime + ", sOH=" + sOH + ", remark1=" + remark1 + ", soc=" + soc
 				+ ", voltageH=" + voltageH + ", voltageL=" + voltageL + ", temptureH=" + temptureH + ", temptureL="
 				+ temptureL + ", beforeSoc=" + beforeSoc + ", afterSoc=" + afterSoc + ", statisticalTimes="
-				+ statisticalTimes + ", statisticalDate=" + statisticalDate + ", statisticalWeek=" + statisticalWeek
-				+ ", statisticalMonth=" + statisticalMonth + ", statisticalSeason=" + statisticalSeason + "]";
+				+ statisticalTimes + ", statisticalHour=" + statisticalHour + ", statisticalDate=" + statisticalDate
+				+ ", statisticalWeek=" + statisticalWeek + ", statisticalMonth=" + statisticalMonth
+				+ ", statisticalSeason=" + statisticalSeason + "]";
 	}
 	
 }
