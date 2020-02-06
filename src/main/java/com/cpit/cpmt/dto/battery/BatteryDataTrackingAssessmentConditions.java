@@ -51,7 +51,7 @@ public class BatteryDataTrackingAssessmentConditions implements Serializable {
     /**
      * 时间粒度
      */
-    private Integer timeGranularity; //1.小时、2.天、3.周、4.月、5.季
+    private Integer timeGranularity; //1.小时、2.天、3.周、4.月、5.季  6.年
     /**
      * 车辆电池的bMSCode
      */
@@ -68,6 +68,18 @@ public class BatteryDataTrackingAssessmentConditions implements Serializable {
      */
     @JsonFormat(pattern=TimeConvertor.FORMAT_MINUS_24HOUR,timezone = "GMT+8")
     private Date endTime;
+    
+    private String statisticalHour;
+    
+    private String statisticalDay;
+    
+    private String statisticalWeek;
+    
+    private String statisticalMonth;
+    
+    private String statisticalSeason;
+    
+    private String statisticalYear;
     
     private String startStatisticalHour;
     
@@ -88,7 +100,6 @@ public class BatteryDataTrackingAssessmentConditions implements Serializable {
     private String startStatisticalSeason;
     
     private String endStatisticalSeason;
-    
     
 	public String getOperatorId() {
 		return operatorId;
@@ -221,6 +232,42 @@ public class BatteryDataTrackingAssessmentConditions implements Serializable {
 	}
 	public void setEndStatisticalSeason(String endStatisticalSeason) {
 		this.endStatisticalSeason = endStatisticalSeason;
+	}
+	public String getStatisticalMonth() {
+		return statisticalMonth;
+	}
+	public void setStatisticalMonth(String statisticalMonth) {
+		this.statisticalMonth = statisticalMonth;
+	}
+	public String getStatisticalSeason() {
+		return statisticalSeason;
+	}
+	public void setStatisticalSeason(String statisticalSeason) {
+		this.statisticalSeason = statisticalSeason;
+	}
+	public String getStatisticalHour() {
+		return statisticalHour;
+	}
+	public void setStatisticalHour(String statisticalHour) {
+		this.statisticalHour = statisticalHour;
+	}
+	public String getStatisticalDay() {
+		return statisticalDay;
+	}
+	public void setStatisticalDay(String statisticalDay) {
+		this.statisticalDay = statisticalDay;
+	}
+	public String getStatisticalWeek() {
+		return statisticalWeek;
+	}
+	public void setStatisticalWeek(String statisticalWeek) {
+		this.statisticalWeek = statisticalWeek;
+	}
+	public String getStatisticalYear() {
+		return statisticalYear;
+	}
+	public void setStatisticalYear(String statisticalYear) {
+		this.statisticalYear = statisticalYear;
 	}
 	@Override
 	public String toString() {

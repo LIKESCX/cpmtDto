@@ -81,6 +81,10 @@ public class AnaBmsSingleChargeWarningResult implements Serializable {
      * 对应的季度(以结束时间为准)
      */
     private String statisticalSeason;
+    /**
+     * 对应的年度(以结束时间为准)
+     */
+    private String statisticalYear;
 
     public String getStationId() {
         return stationId;
@@ -201,6 +205,14 @@ public class AnaBmsSingleChargeWarningResult implements Serializable {
 
 	public void setConnectorId(String connectorId) {
 		this.connectorId = connectorId;
+	}
+
+	public String getStatisticalYear() {
+		return statisticalYear;
+	}
+
+	public void setStatisticalYear(String statisticalYear) {
+		this.statisticalYear = statisticalYear;
 	}
 
 	@Override

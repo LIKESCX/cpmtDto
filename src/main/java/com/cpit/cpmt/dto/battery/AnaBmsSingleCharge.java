@@ -118,7 +118,7 @@ public class AnaBmsSingleCharge implements Serializable {
     
     private String statisticalTimes;
     /**
-     * 统计次数  按小时汇总时用
+     * 对应的日期(以结束时间为准) 按小时汇总时用
      */
     private String statisticalHour;
 
@@ -141,6 +141,11 @@ public class AnaBmsSingleCharge implements Serializable {
      * 对应的季度(以结束时间为准)
      */
     private String statisticalSeason;
+    
+    /**
+     * 对应的年度(以结束时间为准)
+     */
+    private String statisticalYear;
 
 	public String getbMSCode() {
 		return bMSCode;
@@ -447,6 +452,18 @@ public class AnaBmsSingleCharge implements Serializable {
 	public void setStatisticalHour(String statisticalHour) {
 		this.statisticalHour = statisticalHour;
 	}
+
+	public String getStatisticalYear() {
+		return statisticalYear;
+	}
+
+
+
+	public void setStatisticalYear(String statisticalYear) {
+		this.statisticalYear = statisticalYear;
+	}
+
+
 
 	@Override
 	public String toString() {

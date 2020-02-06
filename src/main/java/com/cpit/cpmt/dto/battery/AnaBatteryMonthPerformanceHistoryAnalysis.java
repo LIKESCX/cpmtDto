@@ -40,6 +40,15 @@ public class AnaBatteryMonthPerformanceHistoryAnalysis implements Serializable {
      * 对应的月份(以结束时间为准)
      */
     private String statisticalMonth;
+    /**
+     * 对应的季份(以结束时间为准)
+     */
+    private String statisticalSeason;
+    
+    /**
+     * 对应的年份(以结束时间为准)
+     */
+    private String statisticalYear;
 
     private static final long serialVersionUID = 1L;
 
@@ -99,7 +108,23 @@ public class AnaBatteryMonthPerformanceHistoryAnalysis implements Serializable {
         this.statisticalMonth = statisticalMonth;
     }
 
-    @Override
+    public String getStatisticalSeason() {
+		return statisticalSeason;
+	}
+
+	public void setStatisticalSeason(String statisticalSeason) {
+		this.statisticalSeason = statisticalSeason;
+	}
+
+	public String getStatisticalYear() {
+		return statisticalYear;
+	}
+
+	public void setStatisticalYear(String statisticalYear) {
+		this.statisticalYear = statisticalYear;
+	}
+
+	@Override
     public boolean equals(Object that) {
         if (this == that) {
             return true;

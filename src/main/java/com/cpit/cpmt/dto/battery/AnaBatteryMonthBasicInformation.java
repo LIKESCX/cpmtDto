@@ -58,9 +58,20 @@ public class AnaBatteryMonthBasicInformation implements Serializable {
     private Integer estiR;
     
     /**
-     * 对应的月份
+     * 对应的月份(以结束时间为准)
      */
     private String statisticalMonth;
+    
+    /**
+     * 对应的季份(以结束时间为准)
+     */
+    private String statisticalSeason;
+    
+    /**
+     * 对应的年份(以结束时间为准)
+     */
+    private String statisticalYear;
+    
 
     public Integer getId() {
         return id;
@@ -150,6 +161,22 @@ public class AnaBatteryMonthBasicInformation implements Serializable {
 
 	public void setsOH(Integer sOH) {
 		this.sOH = sOH;
+	}
+
+	public String getStatisticalSeason() {
+		return statisticalSeason;
+	}
+
+	public void setStatisticalSeason(String statisticalSeason) {
+		this.statisticalSeason = statisticalSeason;
+	}
+
+	public String getStatisticalYear() {
+		return statisticalYear;
+	}
+
+	public void setStatisticalYear(String statisticalYear) {
+		this.statisticalYear = statisticalYear;
 	}
 
 	@Override
