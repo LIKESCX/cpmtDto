@@ -31,7 +31,7 @@
 		<junit.version>4.12</junit.version>
 
 		<!-- jackson-databind -->
-		<jackson-databind.version>2.5.4</jackson-databind.version>
+		<jackson-databind.version>2.12.6.1</jackson-databind.version>
 
 		<!-- google-guava -->
 		<google-guava.version>18.0</google-guava.version>
